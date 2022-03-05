@@ -26,6 +26,8 @@
       </div>
   </header>
 
+
+
   <main>
     <div class="container text-center" id="quiz-sheet">
 
@@ -43,12 +45,20 @@
             <div class="choice" id="C" 
             onclick="checkAnswer('C')">C</div>
       </div>
-
     </div>
-
-
-
   </main>
+
+  <footer>
+    <div class="container text-right" id="next">
+        <div class=" container text-right" id="next-question">
+            <button type="button" class="btn btn-success btn-lg" id="next-question" onclick="event.stopPropagation()">Next Question!</button>
+        </div>
+    </div>
+  </footer>
+
+
+
+
   <script src="./assets/js/script.js"></script> 
 </body>
 </html>
