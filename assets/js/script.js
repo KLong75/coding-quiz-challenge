@@ -6,7 +6,8 @@ var runQuiz = function() {
     var quizBox = document.querySelector("#quiz-sheet");
     document.getElementById("start-button-container").hidden = true;
     var quizQuestionOne = document.createElement("div");
-    quizQuestionOne.textContent ="Which tag is used to list items with bullets?";
+    quizQuestionOne.className ="quiz-question"
+    quizQuestionOne.textContent ="1. What does HTML stand for?";
     quizBox.appendChild(quizQuestionOne);
 
     var answerChoiceBoxA = document.createElement("div");
@@ -14,8 +15,8 @@ var runQuiz = function() {
     quizBox.appendChild(answerChoiceBoxA); 
 
     var answerChoiceA = document.createElement("button");
-    answerChoiceA.className = "container text-left"
-    answerChoiceA.textContent="A. rgrgrgasgasg";
+    answerChoiceA.className = "container text-left btn btn-secondary"
+    answerChoiceA.textContent="A. Hyper Toddler Makes Lasagna";
     answerChoiceBoxA.appendChild(answerChoiceA);
 
     var answerChoiceBoxB = document.createElement("div");
@@ -23,8 +24,8 @@ var runQuiz = function() {
     quizBox.appendChild(answerChoiceBoxB); 
 
     var answerChoiceB = document.createElement("button");
-    answerChoiceB.className = "container text-left"
-    answerChoiceB.textContent="B. rgrgrgasgasg";
+    answerChoiceB.className = "container text-left btn btn-secondary"
+    answerChoiceB.textContent="B. Hypertext Markup Language";
     answerChoiceBoxB.appendChild(answerChoiceB);
 
     var answerChoiceBoxC = document.createElement("div");
@@ -32,8 +33,8 @@ var runQuiz = function() {
     quizBox.appendChild(answerChoiceBoxC); 
 
     var answerChoiceC = document.createElement("button");
-    answerChoiceC.className = "container text-left"
-    answerChoiceC.textContent="C. rgrgrgasgasg";
+    answerChoiceC.className = "container text-left btn btn-secondary"
+    answerChoiceC.textContent="C. How To Make Lasagna";
     answerChoiceBoxC.appendChild(answerChoiceC);
 
 

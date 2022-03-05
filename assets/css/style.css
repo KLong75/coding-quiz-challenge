@@ -12,3 +12,6 @@ header{
     display: none;
 }
 
+.quiz-question {
+    font-size:x-large;
+}
