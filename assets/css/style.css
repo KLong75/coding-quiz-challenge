@@ -3,3 +3,11 @@
     margin:200px;
 }
 
+header{
+    padding: 20px;
+    margin: 20px;
+}
+
+#question-answer-field {
+    display: none;
+}
