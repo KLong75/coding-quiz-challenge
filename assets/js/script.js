@@ -1,20 +1,25 @@
 
 //var buttonEl = document.querySelector("#next-question");
-var timeleft = 100;
-var downloadTimer = setInterval(function(){
-  if(timeleft <= 0){
-    clearInterval(downloadTimer);
-    document.getElementById("countdown").innerHTML = "Finished";
-  } else {
-    document.getElementById("countdown").innerHTML = "Timer: " + timeleft + " seconds remaining";
-  }
-  timeleft -= 1;
-}, 1000);
+
 
 
 
 var runQuiz = function() {
+
+    var timeleft = 100;
+    var quizTimer = setInterval(function(){
+      if(timeleft <= 0){
+       clearInterval(quizTimer);
+       document.getElementById("countdown").innerHTML = "Finished";
+    } else {
+       document.getElementById("countdown").innerHTML = "Timer: " + timeleft + " seconds remaining";
+    }
+    timeleft -= 1;
+    }, 1000);
     
+
+
+
     var nextQuestion = document.querySelector("#next");
         document.getElementById("next-question").hidden = false;
 
