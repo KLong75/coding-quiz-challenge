@@ -1,15 +1,19 @@
 
+//var buttonEl = document.querySelector("#next-question");
+
+
 
 
 var runQuiz = function() {
     
-    //  var nextQuestion = document.querySelector("#next");
-      //    document.getElementById("next-question").hidden = false;
+    var nextQuestion = document.querySelector("#next");
+        document.getElementById("next-question").hidden = false;
 
     var quizBox = document.querySelector("#quiz-sheet");
       document.getElementById("start-button-container").hidden = true;
 
 
+      
     var quizQuestionOne = document.createElement("div");
       quizQuestionOne.className ="quiz-question";
       quizQuestionOne.textContent ="1. What does HTML stand for?";
@@ -58,16 +62,20 @@ var runQuiz = function() {
       function checkAnswerC() {
         document.getElementById("incorrect-c").innerHTML = "Incorrect";
       }
-      
 
-    /*var nextQuestion = document.createElement("button")
+    //var nextQuestion = documenent.getElementById('next-question');
+
+    var nextQuestion = document.createElement("button")
       nextQuestion.id = "next-question";
-      nextQuestion.className = "next-question btn btn-success";
-      nextQuestion.textContent = "Next Question"
-      quizBox.appendChild(nextQuestion);*/
+      nextQuestion.className = "next btn btn-success";
+      nextQuestion.textContent = "Next Question!"
+      quizBox.appendChild(nextQuestion);
+      document.getElementById("next-question").addEventListener("click", nextPage);
+      function nextPage() {
+          console.log('next');
+      }
     }
-    
-    
+
     document.getElementById("start-button").addEventListener("click", runQuiz);
     
    // var answerChoiceA = document.createElement("button");

@@ -21,10 +21,7 @@ footer {
   position:absolute;
   width: 100%;
   justify-content: right;
-  display: block;
+  display: none;
 }
 
 
-#next-question {
-    display: none;
-}
