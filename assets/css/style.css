@@ -25,3 +25,8 @@ footer {
 }
 
 
+.btn {
+    padding: 20px;
+    margin: 10px;
+    border: solid black; 
+}
