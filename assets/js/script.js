@@ -18,6 +18,7 @@ var runQuiz = function() {
     }, 1000);
     
 
+
     var nextQuestion = document.querySelector("#next");
         document.getElementById("next-question").hidden = false;
 
@@ -206,6 +207,7 @@ var runQuiz = function() {
                       document.getElementById("countdown").timeLeft = timeLeft -=10;
                       document.getElementById("third-choice-a").innerHTML = "Incorrect";
                       document.getElementById("third-choice-a").className = "container text-left btn btn-danger"
+                      
                     }
   
                   var thirdChoiceBoxB = document.createElement("div");
@@ -237,6 +239,7 @@ var runQuiz = function() {
                     function checkSecondAnswerC() {
                        document.getElementById("javascript").innerHTML = "Correct";
                        document.getElementById("javascript").className = "container text-left btn btn-success"
+                       var timeLeft = tim
                     }
 
                   var checkScore = document.createElement("button")
