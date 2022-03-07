@@ -1,6 +1,5 @@
 
-//var buttonEl = document.querySelector("#next-question");
-
+var savedScores = JSON.parse(localStorage.getItem("savedData")) || [];
 
 var timeBox = document.querySelector("#header-row");
 
@@ -17,31 +16,11 @@ var runQuiz = function() {
     timeLeft -= 1;
     }, 1000);
     
-
-
-    var nextQuestion = document.querySelector("#next");
-        document.getElementById("next-question").hidden = false;
+    //var nextQuestion = document.querySelector("#next");
+        //document.getElementById("next-question").hidden = false;
 
     var quizBox = document.querySelector("#quiz-sheet");
       document.getElementById("start-button-container").hidden = true;
-
- 
-     
-
-    /*var userChoice = ['A', 'B', 'C'];
-      userChoice.forEach((choiceValue, i) => {
-         var labelValue = document.createElement('label');
-         labelValue.innerHTML = choiceValue;
-         var inputValue = document.createElement('input');
-         inputValue.type = "radio";
-         inputValue.name = choiceValue;
-         inputValue.choiceValue = i;
-         document.body.appendChild(labelValue);
-         document.body.appendChild(inputValue);
-    });*/
-
-
-
 
     var quizQuestionOne = document.createElement("div");
       quizQuestionOne.id ="question-one"
@@ -62,9 +41,8 @@ var runQuiz = function() {
       document.getElementById("hyper-toddler").addEventListener("click", checkAnswerA);
       function checkAnswerA() {
         document.getElementById("countdown").timeLeft = timeLeft -=10;
-        document.getElementById("hyper-toddler").innerHTML = "Incorrect";
+        document.getElementById("hyper-toddler").innerHTML = "Incorrect - 10 Second Deduction - Try Again";
         document.getElementById("hyper-toddler").className = "container text-left btn btn-danger"
-
       }
 
     var answerChoiceBoxB = document.createElement("div");
@@ -79,7 +57,7 @@ var runQuiz = function() {
       answerChoiceBoxB.appendChild(answerChoiceB);
       document.getElementById("correct").addEventListener("click", checkAnswerB);
         function checkAnswerB() {
-          document.getElementById("correct").innerHTML = "Correct";
+          document.getElementById("correct").innerHTML = "Correct! Go to the next question.";
           document.getElementById("correct").className = "container text-left btn btn-success"
         }
    
@@ -96,7 +74,7 @@ var runQuiz = function() {
       document.getElementById("lasagna").addEventListener("click", checkAnswerC);
       function checkAnswerC() {
         document.getElementById("countdown").timeLeft = timeLeft -=10;
-        document.getElementById("lasagna").innerHTML = "Incorrect";
+        document.getElementById("lasagna").innerHTML = "Incorrect - 10 Second Deduction - Try Again";
         document.getElementById("lasagna").className = "container text-left btn btn-danger"
       }
 
@@ -136,7 +114,7 @@ var runQuiz = function() {
             document.getElementById("second-choice-a").addEventListener("click", checkSecondAnswerA);
             function checkSecondAnswerA() {
               document.getElementById("countdown").timeLeft = timeLeft -=10;
-              document.getElementById("second-choice-a").innerHTML = "Incorrect";
+              document.getElementById("second-choice-a").innerHTML = "Incorrect - 10 Second Deduction - Try Again";
               document.getElementById("second-choice-a").className = "container text-left btn btn-danger"
             }
     
@@ -152,7 +130,7 @@ var runQuiz = function() {
              secondChoiceBoxB.appendChild(secondChoiceB);
              document.getElementById("cascading-style-sheet").addEventListener("click", checkSecondAnswerB);
                function checkSecondAnswerB() {
-                 document.getElementById("cascading-style-sheet").innerHTML = "Correct";
+                 document.getElementById("cascading-style-sheet").innerHTML = "Correct! - Go on to the next question.";
                  document.getElementById("cascading-style-sheet").className = "container text-left btn btn-success"
                }
        
@@ -169,7 +147,7 @@ var runQuiz = function() {
               document.getElementById("crazy-super-silly").addEventListener("click", checkSecondAnswerC);
               function checkSecondAnswerC() {
                 document.getElementById("countdown").timeLeft = timeLeft -=10;
-                document.getElementById("crazy-super-silly").innerHTML = "Incorrect";
+                document.getElementById("crazy-super-silly").innerHTML = "Incorrect - 10 Second Deduction - Try Again";
                 document.getElementById("crazy-super-silly").className = "container text-left btn btn-danger"
               }
 
@@ -197,6 +175,7 @@ var runQuiz = function() {
                     quizBox.appendChild(quizQuestionThree);
 
                   var thirdChoiceBoxA = document.createElement("div");
+                    thirdChoiceBoxA.id = "third-box-a"
                     thirdChoiceBoxA.className = "container";
                     quizBox.appendChild(thirdChoiceBoxA); 
   
@@ -208,12 +187,12 @@ var runQuiz = function() {
                     document.getElementById("third-choice-a").addEventListener("click", checkThirdAnswerA);
                     function checkThirdAnswerA() {
                       document.getElementById("countdown").timeLeft = timeLeft -=10;
-                      document.getElementById("third-choice-a").innerHTML = "Incorrect";
+                      document.getElementById("third-choice-a").innerHTML = "Incorrect - 10 Second Deduction - Try Again";
                       document.getElementById("third-choice-a").className = "container text-left btn btn-danger"
-                      
                     }
   
                   var thirdChoiceBoxB = document.createElement("div");
+                    thirdChoiceBoxB.id = "third-box-b"
                     thirdChoiceBoxB.className = "container";
                     quizBox.appendChild(thirdChoiceBoxB); 
   
@@ -225,11 +204,12 @@ var runQuiz = function() {
                     document.getElementById("coffee").addEventListener("click", checkThirdAnswerB);
                       function checkThirdAnswerB() {
                         document.getElementById("countdown").timeLeft = timeLeft -=10;
-                        document.getElementById("coffee").innerHTML = "Incorrect";
+                        document.getElementById("coffee").innerHTML = "Incorrect - 10 Second Deduction - Try Again";
                         document.getElementById("coffee").className = "container text-left btn btn-danger"
                       }
      
                   var thirdChoiceBoxC = document.createElement("div");
+                    thirdChoiceBoxC.id = "third-box-c"
                     thirdChoiceBoxC.className = "container";
                     quizBox.appendChild(thirdChoiceBoxC); 
   
@@ -240,7 +220,7 @@ var runQuiz = function() {
                     thirdChoiceBoxC.appendChild(thirdChoiceC);
                     document.getElementById("javascript").addEventListener("click", checkSecondAnswerC);
                     function checkSecondAnswerC() {
-                       document.getElementById("javascript").innerHTML = "Correct";
+                       document.getElementById("javascript").innerHTML = "Correct! Save Your Score!";
                        document.getElementById("javascript").className = "container text-left btn btn-success"
                        document.getElementById("countdown").style.display = "none";
                        var finishTime = document.createElement("div");
@@ -253,11 +233,36 @@ var runQuiz = function() {
                   var checkScore = document.createElement("button")
                     checkScore.id = "check-score";
                     checkScore.className = "third btn btn-warning";
-                    checkScore.textContent = "Check Score!"
+                    checkScore.textContent = "Check Your Score!"
                     quizBox.appendChild(checkScore);
                     document.getElementById("check-score").addEventListener("click", endGame);
                     function endGame() {
-                      console.log('game over');
+                      document.getElementById("question-three").style.display = "none";
+                      document.getElementById("third-box-a").style.display = "none";
+                      document.getElementById("third-choice-a").style.display = "none";
+                      document.getElementById("third-box-b").style.display = "none";
+                      document.getElementById("coffee").style.display = "none";
+                      document.getElementById("third-box-c").style.display = "none";
+                      document.getElementById("javascript").style.display = "none";
+                      document.getElementById("check-score").style.display = "none";
+                      const finalScoreEl = document.getElementById("final-score");
+                      const nameTextBox = document.createElement("input");
+                      const scoreText = document.createElement("h2");
+                      scoreText.textContent = "Your Final Score Is " + timeLeft;
+                      const instructionMessage = document.createElement("p");
+                      instructionMessage.textContent = "Enter Name and Click Button to Save Your Score"
+                      const saveButton = document.createElement("button");
+                      saveButton.className =" btn btn-primary"
+                      saveButton.textContent ="Save Your Score!";
+                        saveButton.addEventListener("click", function(){
+                            const data = {
+                                name: nameTextBox.value,
+                                score: timeLeft
+                            }
+                            savedScores.push(data)
+                            localStorage.setItem("savedData", JSON.stringify(savedScores))
+                        })
+                      finalScoreEl.append(scoreText, instructionMessage, nameTextBox, saveButton)
                   } 
               }
         }
