@@ -10,14 +10,11 @@ var runQuiz = function() {
       if(timeLeft <= 0){
        clearInterval(quizTimer);
        document.getElementById("countdown").innerHTML = "Finished";
-    } else {
+      } else {
        document.getElementById("countdown").innerHTML = "Timer: " + timeLeft + " seconds remaining";
-    }
-    timeLeft -= 1;
-    }, 1000);
-    
-    //var nextQuestion = document.querySelector("#next");
-        //document.getElementById("next-question").hidden = false;
+      }
+      timeLeft -= 1;
+      }, 1000);
 
     var quizBox = document.querySelector("#quiz-sheet");
       document.getElementById("start-button-container").hidden = true;
@@ -263,10 +260,10 @@ var runQuiz = function() {
                             localStorage.setItem("savedData", JSON.stringify(savedScores))
                         })
                       finalScoreEl.append(scoreText, instructionMessage, nameTextBox, saveButton)
-                  } 
+                    } 
               }
         }
-}
+    }
 
 document.getElementById("start-button").addEventListener("click", runQuiz);
   
