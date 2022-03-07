@@ -6,19 +6,17 @@
 
 var runQuiz = function() {
 
-    var timeleft = 100;
+    var timeLeft = 100;
     var quizTimer = setInterval(function(){
-      if(timeleft <= 0){
+      if(timeLeft <= 0){
        clearInterval(quizTimer);
        document.getElementById("countdown").innerHTML = "Finished";
     } else {
-       document.getElementById("countdown").innerHTML = "Timer: " + timeleft + " seconds remaining";
+       document.getElementById("countdown").innerHTML = "Timer: " + timeLeft + " seconds remaining";
     }
-    timeleft -= 1;
+    timeLeft -= 1;
     }, 1000);
     
-
-
 
     var nextQuestion = document.querySelector("#next");
         document.getElementById("next-question").hidden = false;
@@ -59,7 +57,9 @@ var runQuiz = function() {
       answerChoiceBoxA.appendChild(answerChoiceA);
       document.getElementById("hyper-toddler").addEventListener("click", checkAnswerA);
       function checkAnswerA() {
+        document.getElementById("countdown").timeLeft = timeLeft -=10;
         document.getElementById("hyper-toddler").innerHTML = "Incorrect";
+        
       }
 
     var answerChoiceBoxB = document.createElement("div");
@@ -89,6 +89,7 @@ var runQuiz = function() {
       answerChoiceBoxC.appendChild(answerChoiceC);
       document.getElementById("lasagna").addEventListener("click", checkAnswerC);
       function checkAnswerC() {
+        document.getElementById("countdown").timeLeft = timeLeft -=10;
         document.getElementById("lasagna").innerHTML = "Incorrect";
       }
 
@@ -127,6 +128,7 @@ var runQuiz = function() {
             secondChoiceBoxA.appendChild(secondChoiceA);
             document.getElementById("second-choice-a").addEventListener("click", checkSecondAnswerA);
             function checkSecondAnswerA() {
+              document.getElementById("countdown").timeLeft = timeLeft -=10;
               document.getElementById("second-choice-a").innerHTML = "Incorrect";
             }
     
@@ -157,6 +159,7 @@ var runQuiz = function() {
               secondChoiceBoxC.appendChild(secondChoiceC);
               document.getElementById("crazy-super-silly").addEventListener("click", checkSecondAnswerC);
               function checkSecondAnswerC() {
+                document.getElementById("countdown").timeLeft = timeLeft -=10;
                 document.getElementById("crazy-super-silly").innerHTML = "Incorrect";
               }
 
@@ -194,7 +197,8 @@ var runQuiz = function() {
                     thirdChoiceBoxA.appendChild(thirdChoiceA);
                     document.getElementById("third-choice-a").addEventListener("click", checkThirdAnswerA);
                     function checkThirdAnswerA() {
-                     document.getElementById("third-choice-a").innerHTML = "Incorrect";
+                      document.getElementById("countdown").timeLeft = timeLeft -=10;
+                      document.getElementById("third-choice-a").innerHTML = "Incorrect";
                     }
   
                   var thirdChoiceBoxB = document.createElement("div");
@@ -208,7 +212,8 @@ var runQuiz = function() {
                     thirdChoiceBoxB.appendChild(thirdChoiceB);
                     document.getElementById("coffee").addEventListener("click", checkThirdAnswerB);
                       function checkThirdAnswerB() {
-                        document.getElementById("coffee").innerHTML = "Correct";
+                        document.getElementById("countdown").timeLeft = timeLeft -=10;
+                        document.getElementById("coffee").innerHTML = "Incorrect";
                       }
      
                   var thirdChoiceBoxC = document.createElement("div");
@@ -222,7 +227,7 @@ var runQuiz = function() {
                     thirdChoiceBoxC.appendChild(thirdChoiceC);
                     document.getElementById("javascript").addEventListener("click", checkSecondAnswerC);
                     function checkSecondAnswerC() {
-                       document.getElementById("javascript").innerHTML = "Incorrect";
+                       document.getElementById("javascript").innerHTML = "Correct";
                     }
 
                   var checkScore = document.createElement("button")
