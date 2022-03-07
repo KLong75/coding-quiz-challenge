@@ -59,7 +59,8 @@ var runQuiz = function() {
       function checkAnswerA() {
         document.getElementById("countdown").timeLeft = timeLeft -=10;
         document.getElementById("hyper-toddler").innerHTML = "Incorrect";
-        
+        document.getElementById("hyper-toddler").className = "container text-left btn btn-danger"
+
       }
 
     var answerChoiceBoxB = document.createElement("div");
@@ -75,6 +76,7 @@ var runQuiz = function() {
       document.getElementById("correct").addEventListener("click", checkAnswerB);
         function checkAnswerB() {
           document.getElementById("correct").innerHTML = "Correct";
+          document.getElementById("correct").className = "container text-left btn btn-success"
         }
    
     var answerChoiceBoxC = document.createElement("div");
@@ -91,11 +93,12 @@ var runQuiz = function() {
       function checkAnswerC() {
         document.getElementById("countdown").timeLeft = timeLeft -=10;
         document.getElementById("lasagna").innerHTML = "Incorrect";
+        document.getElementById("lasagna").className = "container text-left btn btn-danger"
       }
 
     var nextQuestion = document.createElement("button")
       nextQuestion.id = "next-question";
-      nextQuestion.className = "next btn btn-success";
+      nextQuestion.className = "next btn btn-primary";
       nextQuestion.textContent = "Next Question!"
       quizBox.appendChild(nextQuestion);
       document.getElementById("next-question").addEventListener("click", nextPage);
@@ -130,6 +133,7 @@ var runQuiz = function() {
             function checkSecondAnswerA() {
               document.getElementById("countdown").timeLeft = timeLeft -=10;
               document.getElementById("second-choice-a").innerHTML = "Incorrect";
+              document.getElementById("second-choice-a").className = "container text-left btn btn-danger"
             }
     
            var secondChoiceBoxB = document.createElement("div");
@@ -145,6 +149,7 @@ var runQuiz = function() {
              document.getElementById("cascading-style-sheet").addEventListener("click", checkSecondAnswerB);
                function checkSecondAnswerB() {
                  document.getElementById("cascading-style-sheet").innerHTML = "Correct";
+                 document.getElementById("cascading-style-sheet").className = "container text-left btn btn-success"
                }
        
             var secondChoiceBoxC = document.createElement("div");
@@ -161,11 +166,12 @@ var runQuiz = function() {
               function checkSecondAnswerC() {
                 document.getElementById("countdown").timeLeft = timeLeft -=10;
                 document.getElementById("crazy-super-silly").innerHTML = "Incorrect";
+                document.getElementById("crazy-super-silly").className = "container text-left btn btn-danger"
               }
 
               var thirdQuestion = document.createElement("button")
               thirdQuestion.id = "third-question";
-              thirdQuestion.className = "third btn btn-success";
+              thirdQuestion.className = "third btn btn-primary";
               thirdQuestion.textContent = "Next Question!"
               quizBox.appendChild(thirdQuestion);
               document.getElementById("third-question").addEventListener("click", thirdPage);
@@ -199,6 +205,7 @@ var runQuiz = function() {
                     function checkThirdAnswerA() {
                       document.getElementById("countdown").timeLeft = timeLeft -=10;
                       document.getElementById("third-choice-a").innerHTML = "Incorrect";
+                      document.getElementById("third-choice-a").className = "container text-left btn btn-danger"
                     }
   
                   var thirdChoiceBoxB = document.createElement("div");
@@ -214,6 +221,7 @@ var runQuiz = function() {
                       function checkThirdAnswerB() {
                         document.getElementById("countdown").timeLeft = timeLeft -=10;
                         document.getElementById("coffee").innerHTML = "Incorrect";
+                        document.getElementById("coffee").className = "container text-left btn btn-danger"
                       }
      
                   var thirdChoiceBoxC = document.createElement("div");
@@ -228,6 +236,7 @@ var runQuiz = function() {
                     document.getElementById("javascript").addEventListener("click", checkSecondAnswerC);
                     function checkSecondAnswerC() {
                        document.getElementById("javascript").innerHTML = "Correct";
+                       document.getElementById("javascript").className = "container text-left btn btn-success"
                     }
 
                   var checkScore = document.createElement("button")
