@@ -2,7 +2,7 @@
 //var buttonEl = document.querySelector("#next-question");
 
 
-
+var timeBox = document.querySelector("#header-row");
 
 var runQuiz = function() {
 
@@ -24,6 +24,9 @@ var runQuiz = function() {
 
     var quizBox = document.querySelector("#quiz-sheet");
       document.getElementById("start-button-container").hidden = true;
+
+ 
+     
 
     /*var userChoice = ['A', 'B', 'C'];
       userChoice.forEach((choiceValue, i) => {
@@ -239,7 +242,12 @@ var runQuiz = function() {
                     function checkSecondAnswerC() {
                        document.getElementById("javascript").innerHTML = "Correct";
                        document.getElementById("javascript").className = "container text-left btn btn-success"
-                       var timeLeft = tim
+                       document.getElementById("countdown").style.display = "none";
+                       var finishTime = document.createElement("div");
+                         finishTime.id ="finish-time"
+                         finishTime.className ="end-time text-right col";
+                         finishTime.textContent ="Final Time: " + timeLeft;
+                         timeBox.appendChild(finishTime);
                     }
 
                   var checkScore = document.createElement("button")
