@@ -10,10 +10,10 @@
 </head>
 <body>
   <header>
-    <div class="container">
-        <div class="row">
-          <div class="col text-left">
-            View High Scores
+    <div class="container" id ="header-box">
+        <div class="row" id ="header-row">
+          <div class="col text-left ">
+            <a href="highscores.html"> View High Scores </a>
           </div>
           <div class="col-6 text-center"><h1>
               Coding Quiz Challenge!
@@ -26,40 +26,19 @@
       </div>
   </header>
 
-
-
   <main>
     <div class="container text-center" id="quiz-sheet">
-
       <div class=" container text-center" id="start-button-container">
         <button type="button" class="btn btn-success btn-lg" id="start-button" onclick="event.stopPropagation()">Start Quiz!</button>
       </div>
-
-      <div class = "container" id="question-answer-field" >
-          <div id="question">Which tag is used to list items with bullets?</div>g
-          <div id="choices"></div>
-            <div class="choice" id="A" 
-            onclick="checkAnswer('A')">A</div>
-            <div class="choice" id="B" 
-            onclick="checkAnswer('B')">B</div>
-            <div class="choice" id="C" 
-            onclick="checkAnswer('C')">C</div>
+      <div class = "container" id ="final-score">
       </div>
     </div>
   </main>
 
   <footer>
-    <div class="container text-right" id="next">
-        <div class=" container text-right" id="next-question">
-            <button type="button" class="btn btn-success btn-lg" id="next-question" onclick="event.stopPropagation()">Next Question!</button>
-        </div>
-    </div>
   </footer>
-
-
-
-
-  <script src="./assets/js/script.js"></script> 
+<script src="./assets/js/script.js"></script> 
 </body>
 </html>
 
